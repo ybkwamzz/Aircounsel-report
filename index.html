@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Air Counsel — Pilot Lead Qualification Report</title>
+<link rel="icon" type="image/x-icon" href="./favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+<link rel="manifest" href="./site.webmanifest">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -28,6 +33,31 @@
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
+
+  /* Fade-in on page load */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Slide-up stagger for lead cards */
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Gold rule shimmer */
+  @keyframes shimmer {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  }
+
+  /* Parallax header */
+  @keyframes floatHeader {
+    from { transform: translateY(0); }
+    to { transform: translateY(-6px); }
+  }
+
   body {
     background: #e8e0d4;
     font-family: 'Source Serif 4', Georgia, serif;
@@ -42,6 +72,7 @@
     margin: 0 auto;
     box-shadow: 0 4px 40px rgba(0,0,0,0.18), 0 1px 4px rgba(0,0,0,0.1);
     position: relative;
+    animation: fadeIn 0.8s ease-out forwards;
   }
 
   /* Letterhead */
@@ -51,6 +82,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    animation: floatHeader 3s ease-in-out infinite alternate;
   }
 
   .brand-mark {
@@ -100,6 +132,8 @@
   .gold-rule {
     height: 3px;
     background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+    background-size: 200% 200%;
+    animation: shimmer 3s linear infinite;
   }
 
   /* Client header */
@@ -232,6 +266,14 @@
     border: 1px solid var(--rule);
     background: #fff;
     overflow: hidden;
+    animation: slideUp 0.8s ease-out forwards;
+    animation-delay: 0.15s;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .lead-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
   }
 
   .lead-card.instruction-ready {
@@ -543,7 +585,7 @@
     </div>
     <div class="report-meta">
       <div class="report-type">Pilot Qualification Report</div>
-      <div class="report-id">AC-PILOT-2024-001 · SAMPLE</div>
+      <div class="report-id">AC-PILOT-2025-001 · SAMPLE</div>
     </div>
   </div>
   <div class="gold-rule"></div>
@@ -595,7 +637,7 @@
   <div class="leads-container">
 
     <!-- Lead 1 -->
-    <div class="lead-card instruction-ready">
+    <div class="lead-card instruction-ready" style="animation-delay: 0.1s;">
       <div class="lead-top">
         <div class="lead-ref">AC-001</div>
         <div>
@@ -641,7 +683,7 @@
     </div>
 
     <!-- Lead 2 -->
-    <div class="lead-card instruction-ready">
+    <div class="lead-card instruction-ready" style="animation-delay: 0.2s;">
       <div class="lead-top">
         <div class="lead-ref">AC-002</div>
         <div>
@@ -687,7 +729,7 @@
     </div>
 
     <!-- Lead 3 -->
-    <div class="lead-card instruction-ready">
+    <div class="lead-card instruction-ready" style="animation-delay: 0.3s;">
       <div class="lead-top">
         <div class="lead-ref">AC-007</div>
         <div>
@@ -742,7 +784,7 @@
 
   <div class="leads-container">
 
-    <div class="lead-card needs-development">
+    <div class="lead-card needs-development" style="animation-delay: 0.4s;">
       <div class="lead-top">
         <div class="lead-ref">AC-004</div>
         <div>
@@ -769,7 +811,7 @@
       </div>
     </div>
 
-    <div class="lead-card needs-development">
+    <div class="lead-card needs-development" style="animation-delay: 0.5s;">
       <div class="lead-top">
         <div class="lead-ref">AC-005</div>
         <div>
@@ -806,7 +848,7 @@
 
   <div class="leads-container">
 
-    <div class="lead-card not-viable">
+    <div class="lead-card not-viable" style="animation-delay: 0.6s;">
       <div class="lead-top">
         <div class="lead-ref">AC-003</div>
         <div>
@@ -833,7 +875,7 @@
       </div>
     </div>
 
-    <div class="lead-card not-viable">
+    <div class="lead-card not-viable" style="animation-delay: 0.7s;">
       <div class="lead-top">
         <div class="lead-ref">AC-006</div>
         <div>
@@ -902,8 +944,8 @@
   </div>
 
   <div class="confidential-bar">
-    <span class="conf-text">Air Counsel · Proprietary Methodology · Not for Distribution</span>
-    <span class="conf-text">AC-PILOT-2024-001 · SAMPLE DOCUMENT</span>
+    <span class="conf-text">Air Counsel · Proprietary Methodology · Not for Distribution · Shared under pilot evaluation terms — aircounsel.uk</span>
+    <span class="conf-text">AC-PILOT-2025-001 · SAMPLE DOCUMENT</span>
   </div>
 
 </div>
